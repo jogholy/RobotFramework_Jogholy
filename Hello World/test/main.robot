@@ -24,6 +24,9 @@ LookingForAll
 MyFirstTest
     Log    Hello World...
 
+MySecondTest
+    Log    This is my 2nd Test
+
 FirstSeleniumTest
     Open Browser      https://www.google.com    chrome
     Set Browser Implicit Wait    5
