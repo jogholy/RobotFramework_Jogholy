@@ -7,16 +7,16 @@ library    String
 LookingForAll
     [Documentation]    遍历全部员工的名字
     [Arguments]    ${root}    ${PonintsString}
-    ${NameNum}    XML.Get Element Count    ${root}    name
+    ${EmployeeNum}    XML.Get Element Count    ${root}    employee
      
-    FOR    ${INDEX}    IN RANGE    1    ${NameNum}+1
-        ${Value}    XML.Get Element Attribute    ${root}    value    name[${INDEX}]
+    FOR    ${INDEX}    IN RANGE    1    ${EmployeeNum}+1
+        ${Value}    XML.Get Element Attribute    ${root}    value    employee[${INDEX}]
 	    Select From List By Value    id=values_assigned_to_id_1        ${Value}
 		Click Link        应用
 		${state}    Run Keyword And Return Status    Get Text    jquery=p.query-totals span.total-for-estimated-hours span.value
 		Run keyword if    '${state}'=='False'    Continue For Loop
 	    ${SpanValue}    Get Text    jquery=p.query-totals span.total-for-estimated-hours span.value
-	    ${name}    Get Element    ${root}    name[${INDEX}]
+	    ${name}    Get Element    ${root}    employee[${INDEX}]
 	    Set Element Text    ${name}    ${SpanValue}    None    ${PonintsString}
     END
     
@@ -87,7 +87,7 @@ XMLTest2
     
 GetPoints
 	${root}        Parse Xml    H:/SomethingToLearn/redmine.xml
-	${NameNum}     XML.Get Element Count    ${root}    name
+	${EmployeeNum}     XML.Get Element Count    ${root}    employee
 	${QIDNum}      XML.Get Element Count    ${root}    query_id
     Open Browser      http://10.0.0.221:9000/login    Chrome
     Input Text        id=username    haoyifan
@@ -105,16 +105,16 @@ GetPoints
     END
     
     Click Link        /work_time/index
-	FOR    ${INDEX}    IN RANGE    1    ${NameNum}+1
-        ${NUM}    XML.Get Element Attribute    ${root}    number    name[${INDEX}]
+	FOR    ${INDEX}    IN RANGE    1    ${EmployeeNum}+1
+        ${NUM}    XML.Get Element Attribute    ${root}    number    employee[${INDEX}]
         Select From List By Index    jquery=div.contextual select:last-child    ${NUM}
         ${xx}    Get Text    jquery=#content h3
 	    @{words}    Split String     ${xx}    ${SPACE}
-        ${name}    Get Element    ${root}    name[${INDEX}]
-        Set Element Text    ${name}    @{words}[5]    None    DevelPoints
-        Set Element Text    ${name}    @{words}[7]    None    ManagePoints
-        Set Element Text    ${name}    @{words}[15]    None    BasicPoints
-        Set Element Text    ${name}    @{words}[19]    None    ChallengePoints
+        ${employee}    Get Element    ${root}    employee[${INDEX}]
+        Set Element Text    ${employee}    @{words}[5]    None    DevelPoints
+        Set Element Text    ${employee}    @{words}[7]    None    ManagePoints
+        Set Element Text    ${employee}    @{words}[15]    None    BasicPoints
+        Set Element Text    ${employee}    @{words}[19]    None    ChallengePoints
     END
     
     Save Xml    ${root}    H:/SomethingToLearn/2.xml  
