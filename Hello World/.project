@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Hello World</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.robotframework.ide.eclipse.main.plugin.robotLibrariesBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.robotframework.ide.eclipse.main.plugin.robotNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>libspecs/BuiltIn.py</name>
+			<type>1</type>
+			<location>F:/Program Files/Python/lib/site-packages/robot/libraries/BuiltIn.py</location>
+		</link>
+		<link>
+			<name>libspecs/Reserved.py</name>
+			<type>1</type>
+			<location>F:/Program Files/Python/lib/site-packages/robot/libraries/Reserved.py</location>
+		</link>
+		<link>
+			<name>libspecs/SeleniumLibrary.py</name>
+			<type>1</type>
+			<location>F:/Program Files/Python/lib/site-packages/SeleniumLibrary/__init__.py</location>
+		</link>
+		<link>
+			<name>libspecs/XML.py</name>
+			<type>1</type>
+			<location>F:/Program Files/Python/lib/site-packages/robot/libraries/XML.py</location>
+		</link>
+	</linkedResources>
+</projectDescription>
