@@ -3,6 +3,7 @@
     <configVersion>2</configVersion>
     <relativeTo>WORKSPACE</relativeTo>
     <referencedLibrary type="PYTHON" name="SeleniumLibrary" path="F:/Program Files/Python/Lib/site-packages"/>
+    <referencedLibrary type="PYTHON" name="Rammbock" path="F:/Program Files/Python/Lib/site-packages"/>
     <pythonpath/>
     <classpath/>
     <excludedForValidation/>
